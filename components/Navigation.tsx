@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import { logout } from '@/app/login/actions';
 
 export default function Navigation() {
   return (
@@ -10,15 +11,15 @@ export default function Navigation() {
               📚 BookHub
             </Link>
           </div>
-          <div className="flex space-x-8">
-            <Link 
-              href="/" 
+          <div className="flex items-center space-x-8">
+            <Link
+              href="/"
               className="hover:text-zinc-300 transition-colors font-medium"
             >
               Home
             </Link>
-            <Link 
-              href="/books" 
+            <Link
+              href="/books"
               className="hover:text-zinc-300 transition-colors font-medium"
             >
               Books
@@ -35,6 +36,14 @@ export default function Navigation() {
             >
               Publishers
             </Link>
+            <form action={logout}>
+              <button
+                type="submit"
+                className="text-zinc-400 hover:text-white transition-colors font-medium text-sm"
+              >
+                Log out
+              </button>
+            </form>
           </div>
         </div>
       </div>
